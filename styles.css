@@ -1,18 +1,18 @@
 :root {
   color-scheme: light;
-  --bg: #fff8f3;
-  --bg-accent: #fef0e7;
-  --surface: rgba(255, 255, 255, 0.92);
+  --bg: #f6f9ff;
+  --bg-accent: #edf4ff;
+  --surface: rgba(255, 255, 255, 0.94);
   --surface-strong: #ffffff;
-  --line: rgba(8, 115, 54, 0.14);
-  --text: #10311e;
-  --muted: #5f6d63;
-  --brand-red: #ec1c24;
-  --brand-green: #019444;
-  --brand-green-deep: #06733a;
-  --brand-soft: #e7f6ec;
-  --warning: #f59d0d;
-  --shadow: 0 24px 56px rgba(16, 49, 30, 0.12);
+  --line: rgba(18, 102, 255, 0.14);
+  --text: #101522;
+  --muted: #5d6472;
+  --brand-red: #ff6b00;
+  --brand-green: #1d63ff;
+  --brand-green-deep: #174ecf;
+  --brand-soft: #eef4ff;
+  --warning: #ff9b2f;
+  --shadow: 0 24px 56px rgba(20, 35, 68, 0.12);
 }
 
 * {
@@ -25,15 +25,12 @@ html {
 
 body {
   margin: 0;
-  font-family:
-    "Avenir Next",
-    "Segoe UI",
-    sans-serif;
+  font-family: "Manrope", "Segoe UI", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(236, 28, 36, 0.1), transparent 28%),
-    radial-gradient(circle at top right, rgba(1, 148, 68, 0.14), transparent 30%),
-    linear-gradient(180deg, var(--bg), #fffdf8);
+    radial-gradient(circle at top left, rgba(29, 99, 255, 0.14), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 107, 0, 0.12), transparent 24%),
+    linear-gradient(180deg, var(--bg), #ffffff);
 }
 
 h1,
@@ -56,8 +53,8 @@ body::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(236, 28, 36, 0.03), transparent 18%),
-    linear-gradient(270deg, rgba(1, 148, 68, 0.04), transparent 22%);
+    linear-gradient(90deg, rgba(29, 99, 255, 0.03), transparent 18%),
+    linear-gradient(270deg, rgba(255, 107, 0, 0.03), transparent 22%);
 }
 
 .portal-shell,
@@ -90,6 +87,11 @@ body::before {
   margin-bottom: 18px;
 }
 
+.site-logo-top {
+  width: min(100%, 300px);
+  margin: 0 auto 20px;
+}
+
 .portal-hero::after {
   content: "";
   position: absolute;
@@ -98,7 +100,7 @@ body::before {
   width: 240px;
   height: 240px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(1, 148, 68, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(29, 99, 255, 0.18), transparent 70%);
 }
 
 .eyebrow {
@@ -108,6 +110,11 @@ body::before {
   font-size: 0.78rem;
   font-weight: 700;
   margin-bottom: 10px;
+}
+
+.event-hero h1,
+.portal-hero h1 {
+  font-family: "Space Grotesk", "Manrope", sans-serif;
 }
 
 .portal-hero h1 {
@@ -138,6 +145,81 @@ body::before {
   margin-top: 24px;
 }
 
+.event-hero {
+  text-align: center;
+  border-radius: 36px;
+  padding: 42px 36px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(237, 244, 255, 0.9)),
+    radial-gradient(circle at 15% 20%, rgba(29, 99, 255, 0.1), transparent 24%),
+    radial-gradient(circle at 85% 18%, rgba(255, 107, 0, 0.1), transparent 20%);
+  position: relative;
+}
+
+.event-hero::before,
+.event-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  width: 240px;
+  height: 240px;
+  border-radius: 32px;
+  border: 1px solid rgba(29, 99, 255, 0.08);
+  transform: rotate(28deg);
+}
+
+.event-hero::before {
+  left: -120px;
+  bottom: -120px;
+}
+
+.event-hero::after {
+  right: -110px;
+  top: -120px;
+  border-color: rgba(255, 107, 0, 0.1);
+}
+
+.event-hero h1 {
+  max-width: 12ch;
+  margin: 0 auto;
+  font-size: clamp(2.6rem, 7vw, 5.8rem);
+  line-height: 0.92;
+}
+
+.event-hero .subtitle {
+  max-width: 700px;
+  margin: 16px auto 0;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.hero-metric {
+  border: 1px solid rgba(18, 102, 255, 0.12);
+  border-radius: 22px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.hero-metric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.hero-metric strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
 .btn,
 button {
   border: 0;
@@ -165,16 +247,16 @@ button:hover {
 
 .btn-primary,
 button[type="submit"] {
-  background: linear-gradient(135deg, var(--brand-red), #ff6f45);
+  background: linear-gradient(135deg, var(--brand-green), #2d86ff);
   color: white;
-  box-shadow: 0 16px 24px rgba(236, 28, 36, 0.18);
+  box-shadow: 0 16px 24px rgba(29, 99, 255, 0.2);
 }
 
 .btn-secondary,
 .secondary {
-  background: rgba(1, 148, 68, 0.08);
-  color: var(--brand-green-deep);
-  border: 1px solid rgba(1, 148, 68, 0.12);
+  background: rgba(255, 107, 0, 0.08);
+  color: #b55400;
+  border: 1px solid rgba(255, 107, 0, 0.14);
 }
 
 .home-layout {
@@ -317,6 +399,19 @@ button[type="submit"] {
   margin-bottom: 18px;
 }
 
+.toolbar-stack {
+  align-items: center;
+}
+
+.section-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--brand-green);
+  margin-bottom: 8px;
+}
+
 .day-toggle,
 .room-toggle {
   display: flex;
@@ -327,9 +422,9 @@ button[type="submit"] {
 
 .day-filter,
 .room-filter {
-  background: rgba(1, 148, 68, 0.07);
+  background: rgba(29, 99, 255, 0.07);
   color: var(--brand-green-deep);
-  border: 1px solid rgba(1, 148, 68, 0.12);
+  border: 1px solid rgba(29, 99, 255, 0.12);
 }
 
 .day-filter.day-filter-muted {
@@ -342,9 +437,9 @@ button[type="submit"] {
 
 .day-filter.active,
 .room-filter.active {
-  background: linear-gradient(135deg, var(--brand-green), #1bbd69);
+  background: linear-gradient(135deg, var(--brand-green), #2d86ff);
   color: white;
-  box-shadow: 0 12px 20px rgba(1, 148, 68, 0.16);
+  box-shadow: 0 12px 20px rgba(29, 99, 255, 0.16);
 }
 
 .stats {
@@ -356,7 +451,7 @@ button[type="submit"] {
 
 .stat-card {
   background: linear-gradient(180deg, #ffffff, var(--bg-accent));
-  border: 1px solid rgba(236, 28, 36, 0.08);
+  border: 1px solid rgba(18, 102, 255, 0.08);
   border-radius: 18px;
   padding: 14px;
   color: var(--muted);
@@ -387,7 +482,7 @@ button[type="submit"] {
 }
 
 .slot-time {
-  color: var(--brand-red);
+  color: var(--brand-green);
   font-size: 0.95rem;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -412,7 +507,7 @@ button[type="submit"] {
 
 .session-card {
   background: linear-gradient(180deg, #ffffff, #fffaf7);
-  border: 1px solid rgba(1, 148, 68, 0.12);
+  border: 1px solid rgba(29, 99, 255, 0.12);
   border-radius: 22px;
   padding: 18px;
 }
@@ -472,7 +567,7 @@ button[type="submit"] {
   padding: 7px 10px;
   font-size: 0.82rem;
   font-weight: 700;
-  background: rgba(1, 148, 68, 0.1);
+  background: rgba(29, 99, 255, 0.1);
   color: var(--brand-green-deep);
 }
 
@@ -487,7 +582,7 @@ button[type="submit"] {
 }
 
 .badge.completed {
-  background: rgba(1, 148, 68, 0.14);
+  background: rgba(29, 99, 255, 0.14);
   color: var(--brand-green-deep);
 }
 
@@ -511,7 +606,7 @@ button[type="submit"] {
 
 .admin-panel {
   background: linear-gradient(180deg, #ffffff, var(--brand-soft));
-  border: 1px solid rgba(1, 148, 68, 0.12);
+  border: 1px solid rgba(29, 99, 255, 0.12);
   border-radius: 20px;
   padding: 16px;
   margin-bottom: 18px;
@@ -540,7 +635,7 @@ input,
 textarea,
 select {
   width: 100%;
-  border: 1px solid rgba(1, 148, 68, 0.14);
+  border: 1px solid rgba(29, 99, 255, 0.14);
   border-radius: 14px;
   background: #fff;
   color: var(--text);
@@ -571,7 +666,7 @@ select:focus {
 }
 
 .status-pill.active {
-  background: rgba(1, 148, 68, 0.14);
+  background: rgba(29, 99, 255, 0.14);
   color: var(--brand-green-deep);
 }
 
@@ -652,6 +747,10 @@ select:focus {
     margin-bottom: 14px;
   }
 
+  .hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
   .intro-title {
     max-width: none;
   }
@@ -674,6 +773,10 @@ select:focus {
 
   .portal-hero h1 {
     font-size: 2.4rem;
+  }
+
+  .event-hero h1 {
+    font-size: 2.5rem;
   }
 
   .portal-card,

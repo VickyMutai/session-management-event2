@@ -236,18 +236,13 @@ function render() {
 }
 
 function matchesRoomFilter(session) {
-  const room = (session.room || "").trim().toLowerCase();
-
   if (activeRoomFilter === "all") {
     return true;
   }
 
   if (activeRoomFilter === "main hall") {
+    const room = (session.room || "").trim().toLowerCase();
     return room.includes("main hall");
-  }
-
-  if (activeRoomFilter === "breakout") {
-    return room.includes("breakout");
   }
 
   return true;

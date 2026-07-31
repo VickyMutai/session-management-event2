@@ -2,19 +2,92 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      http-equiv="refresh"
-      content="0; url=./day2.html"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirecting to Day 2</title>
-    <script>
-      window.location.replace("./day2.html");
-    </script>
+    <title>DevNest One-Day Event</title>
+    <meta
+      name="description"
+      content="DevNest one-day event schedule, sessions, and event updates."
+    />
+    <link rel="icon" type="image/png" href="assets/devnest-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <p>
-      Redirecting to <a href="./day2.html">Day 2</a>.
-    </p>
+  <body data-default-day-filter="all">
+    <div class="portal-shell">
+      <main class="home-layout">
+        <section class="panel event-hero">
+          <img
+            class="site-logo site-logo-top"
+            src="assets/devnest-logo.png"
+            alt="DevNest Eldoret"
+          />
+
+          <div class="eyebrow">Prompt Engineering 001</div>
+          <h1>Prompt Like A Pro</h1>
+          <div class="hero-metrics">
+            <div class="hero-metric">
+              <span>Theme</span>
+              <strong>Build. Learn. Ship.</strong>
+            </div>
+            <div class="hero-metric">
+              <span>Audience</span>
+              <strong>Students, Developers, Entrepreneurs and Builders</strong>
+            </div>
+          </div>
+
+          <div class="portal-actions">
+            <a class="btn btn-primary" href="#schedule">View Schedule</a>
+            <a
+              class="btn btn-secondary"
+              href="https://chat.whatsapp.com/FA9AB3f3tJCJXvKuFrkWQr?s=cl&p=a&ilr=4&amv=1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Join our Whatsapp Community
+            </a>
+            <a
+              class="btn btn-secondary"
+              href="https://kulevents.co.ke/events/devnest-ai-prompt-engineering"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Register For Event
+            </a>
+          </div>
+        </section>
+
+        <section class="panel list-panel home-schedule" id="schedule">
+          <div class="toolbar toolbar-stack">
+            <div>
+              <div class="section-kicker">Live Program</div>
+              <h2>Event schedule</h2>
+            </div>
+            <input
+              type="search"
+              id="search"
+              placeholder="Search sessions or speakers"
+            />
+          </div>
+
+          <div class="stats" id="stats"></div>
+          <div id="session-list" class="session-list"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>
+          Powered by
+          <a href="https://devnest.africa" target="_blank" rel="noreferrer"
+            >DevNest</a
+          >
+        </p>
+      </footer>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>

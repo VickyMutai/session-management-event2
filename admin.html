@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Afrihealth Innovation Challenge Admin</title>
+    <title>DevNest Event Admin</title>
     <meta
       name="description"
-      content="Admin schedule management for the Afrihealth Innovation Challenge"
+      content="Admin schedule management for the DevNest one-day event"
     />
-    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="icon" type="image/png" href="assets/devnest-logo.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -16,11 +16,11 @@
       <header class="portal-hero admin-hero">
         <img
           class="site-logo"
-          src="logo.png"
-          alt="Afrihealth Innovation Challenge 2026"
+          src="assets/devnest-logo.png"
+          alt="DevNest Eldoret"
         />
         <p class="eyebrow">Admin Portal</p>
-        <h1>Manage the live challenge program</h1>
+        <h1>Manage the live DevNest event program</h1>
         <p class="subtitle">
           Enter the admin secret to create, update, and remove sessions from
           the shared public schedule.
@@ -38,10 +38,10 @@
               Only approved admins can change shared session details.
             </p>
             <form id="admin-form" class="admin-form">
-              <input
-                type="password"
-                id="admin-code"
-                name="admin-code"
+            <input
+              type="password"
+              id="admin-code"
+              name="admin-code"
                 placeholder="Enter admin secret"
               />
               <div class="actions">
@@ -118,12 +118,12 @@
               />
             </label>
             <label>
-              Breakout room
+              Location
               <input
                 type="text"
                 id="room"
                 name="room"
-                placeholder="Main hall or breakout room"
+                placeholder="Venue or stage name"
               />
             </label>
             <label>
@@ -158,7 +158,11 @@
               <p class="eyebrow">Admin Preview</p>
               <h2>Live sessions</h2>
             </div>
-            <input type="search" id="search" placeholder="Search sessions" />
+            <input
+              type="search"
+              id="search"
+              placeholder="Search sessions or speakers"
+            />
           </div>
 
           <div class="day-toggle" role="tablist" aria-label="Day view">
@@ -167,45 +171,7 @@
               class="day-filter active"
               data-day-filter="all"
             >
-              All Days
-            </button>
-            <button
-              type="button"
-              class="day-filter"
-              data-day-filter="2026-07-23"
-            >
-              Day 1
-            </button>
-            <button
-              type="button"
-              class="day-filter"
-              data-day-filter="2026-07-24"
-            >
-              Day 2
-            </button>
-          </div>
-
-          <div class="room-toggle" role="tablist" aria-label="Room view">
-            <button
-              type="button"
-              class="room-filter active"
-              data-room-filter="all"
-            >
-              All
-            </button>
-            <button
-              type="button"
-              class="room-filter"
-              data-room-filter="main hall"
-            >
-              Main Hall
-            </button>
-            <button
-              type="button"
-              class="room-filter"
-              data-room-filter="breakout"
-            >
-              Breakout Room
+              All sessions
             </button>
           </div>
 
