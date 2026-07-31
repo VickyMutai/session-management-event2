@@ -30,9 +30,6 @@ const formAction = document.getElementById("form-action");
 const cancelEditButton = document.getElementById("cancel-edit");
 const syncStatus = document.getElementById("sync-status");
 
-const sampleSessions = [
-];
-
 let sessions = [];
 let isAdmin = false;
 let adminSecret = "";
@@ -445,9 +442,7 @@ async function fetchSessions(showStatus = true) {
   } catch (error) {
     console.error(error);
     isApiAvailable = false;
-    if (!sessions.length) {
-      sessions = sampleSessions;
-    }
+    sessions = [];
     updateSyncStatus("Shared API unavailable", "error");
     render();
   }
