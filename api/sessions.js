@@ -2,7 +2,7 @@ import { BlobPreconditionFailedError, get, put } from "@vercel/blob";
 
 const SESSIONS_PATH = "portal/sessions.json";
 const MINUTE = 60;
-const ADMIN_SECRET = "afrihealth2026";
+const ADMIN_SECRET = "prompt002";
 const BLOB_ACCESS = "public";
 const sampleSessions = [
   {

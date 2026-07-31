@@ -1,4 +1,4 @@
-const ADMIN_SECRET = "afrihealth2026";
+const ADMIN_SECRET = "prompt002";
 
 function sendJson(res, status, body) {
   res.setHeader("Cache-Control", "no-store");
