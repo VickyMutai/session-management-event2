@@ -88,8 +88,8 @@ body::before {
 }
 
 .site-logo-top {
-  width: min(100%, 300px);
-  margin: 0 auto 20px;
+  width: min(100%, 440px);
+  margin: 0 auto 18px;
 }
 
 .portal-hero::after {
