@@ -1,9 +1,10 @@
 import { BlobPreconditionFailedError, get, put } from "@vercel/blob";
+import buildathonProgram from "./buildathon-program.js";
 
 const SESSIONS_PATH = "portal/sessions.json";
 const MINUTE = 60;
 const ADMIN_SECRET = "prompt002";
-const BLOB_ACCESS = "public";
+const BLOB_ACCESS = "private";
 function sendJson(res, status, body) {
   res.setHeader("Cache-Control", "no-store");
   res.status(status).json(body);
@@ -65,7 +66,7 @@ async function readSessions() {
 
   if (!result) {
     return {
-      sessions: [],
+      sessions: buildathonProgram,
       etag: null,
     };
   }

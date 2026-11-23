@@ -26,4 +26,5 @@ Serve the project from the repository root so `/api/*` routes are available on V
 ## Notes
 
 - Shared session data is stored in `portal/sessions.json` inside Vercel Blob.
+- When no schedule has been saved to Blob yet, the API serves the final Build-A-Thon programme from `api/buildathon-program.js`. Saving changes creates the shared schedule; an existing Blob schedule is never replaced by the seed.
 - If the Blob token is missing, the UI falls back to sample sessions and shows that setup is incomplete.
